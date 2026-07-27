@@ -54,7 +54,7 @@ export function HeroSection() {
         {/* Right: product photo */}
         <div className="relative hidden md:block">
           <img
-            src="/images/hero-product.jpg"
+            src="/images/hero-product.png"
             alt="A Boy From Kibera thrifted denim jacket and hoodie on display"
             className="absolute inset-0 w-full h-full object-cover"
           />

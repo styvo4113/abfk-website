@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ShoppingBag, Search, Heart } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, Heart, Crown } from "lucide-react";
 import { useBasket } from "@/context/BasketContext";
 
 const navLinks = [
@@ -18,8 +18,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-brand-white border-b border-brand-black/10">
       <div className="container-abfk flex items-center justify-between h-18 py-4">
-        <Link to="/" aria-label="A Boy From Kibera home">
+        <Link to="/" aria-label="A Boy From Kibera home" className="flex items-center gap-2">
           <img src="/images/logo-icon.png" alt="A Boy From Kibera logo" className="h-12 w-auto" />
+          <span className="text-lg font-black uppercase tracking-wide text-brand-black whitespace-nowrap">
+            A Boy From Kibera
+          </span>
+          <Crown className="w-4 h-4 text-brand-gold" fill="currentColor" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
