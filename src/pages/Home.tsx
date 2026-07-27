@@ -3,24 +3,14 @@ import { promoConfig } from "@/data/promo-config";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
+import { HeroSection } from "@/components/home/HeroSection";
 
 const featuredProducts = products.slice(0, 4);
-
-
 
 export function Home() {
   return (
     <div>
-      {/* Hero section — coded placeholder until the real brand photo is supplied.
-          TODO: once abfk-hero-banner.jpg is ready, replace this whole <section>
-          with: <img src={heroImage} alt="..." className="w-full h-auto object-cover" /> */}
-     <section>
-  <img
-    src="/images/hero-banner.jpg"
-    alt="A Boy From Kibera — Thrift & Style. Wear Confidence. Own Your Story."
-    className="w-full h-auto object-cover"
-  />
-</section>
+      <HeroSection />
 
       {/* Featured products */}
       <section className="container-abfk py-18">
