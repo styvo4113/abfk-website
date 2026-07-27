@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aboyfromkibera.co.ke/sitemap.xml

@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0A0A0A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #F2D879;
+  --color-brand-gold-dark: #A8841F;
+
+  --font-display: 'Archivo Black', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+}
+
+:root {
+  /* shadcn/ui semantic tokens — used once we add shadcn components in later stages */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 4%;
+  --primary: 0 0% 4%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 45 65% 52%;
+  --secondary-foreground: 0 0% 4%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 45 65% 52%;
+  --accent-foreground: 0 0% 4%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 45 65% 52%;
+}
+
+body {
+  @apply bg-brand-white text-brand-black font-body;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tight;
+}
+
+.container-abfk {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply bg-brand-black text-brand-white px-6 py-3 font-semibold uppercase tracking-wide text-sm hover:bg-brand-gold hover:text-brand-black transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-brand-black text-brand-black px-6 py-3 font-semibold uppercase tracking-wide text-sm hover:bg-brand-black hover:text-brand-white transition-colors duration-200;
+}
+@layer base {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-brand-gold);
+    outline-offset: 2px;
+  }
+}
