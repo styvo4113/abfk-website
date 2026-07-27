@@ -9,6 +9,7 @@ export interface BasketItem {
 
 interface BasketContextValue {
   items: BasketItem[];
+  totalItems: number;
   addItem: (product: Product, variant: ProductVariant, quantity: number) => void;
   removeItem: (sku: string) => void;
   updateQuantity: (sku: string, quantity: number) => void;
@@ -48,8 +49,10 @@ export function BasketProvider({ children }: { children: ReactNode }) {
     setItems([]);
   }
 
+  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
-    <BasketContext.Provider value={{ items, addItem, removeItem, updateQuantity, clearBasket }}>
+    <BasketContext.Provider value={{ items, totalItems, addItem, removeItem, updateQuantity, clearBasket }}>
       {children}
     </BasketContext.Provider>
   );

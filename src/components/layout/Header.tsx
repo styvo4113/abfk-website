@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ShoppingBag, Search, Heart } from "lucide-react";
+import { useBasket } from "@/context/BasketContext";
 
 const navLinks = [
   { label: "Shop", to: "/shop" },
@@ -12,6 +13,7 @@ const navLinks = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems } = useBasket();
 
   return (
     <header className="sticky top-0 z-40 bg-brand-white border-b border-brand-black/10">
@@ -43,8 +45,13 @@ export function Header() {
           <Link to="/wishlist" aria-label="Wishlist" className="hover:text-brand-gold transition-colors">
             <Heart className="w-5 h-5" />
           </Link>
-          <Link to="/basket" aria-label="Order basket" className="hover:text-brand-gold transition-colors">
+          <Link to="/basket" aria-label="Order basket" className="relative hover:text-brand-gold transition-colors">
             <ShoppingBag className="w-5 h-5" />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-brand-gold text-brand-black text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
           </Link>
           <button
             className="md:hidden"
