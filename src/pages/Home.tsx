@@ -43,9 +43,11 @@ export function Home() {
               Read Our Story
             </Link>
           </div>
-          <div className="aspect-video bg-brand-white/10 rounded-lg flex items-center justify-center text-brand-white/40 text-sm">
-            Brand Story Image Placeholder
-          </div>
+          <img
+  src="/images/brand-story-kibera.jpg"
+  alt="Aerial view of Kibera, Nairobi"
+  className="aspect-video w-full object-cover rounded-lg"
+/>
         </div>
       </section>
 
