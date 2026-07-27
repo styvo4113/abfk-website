@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
 import { promoConfig } from "@/data/promo-config";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { ProductCard } from "@/components/ProductCard";
+import { products } from "@/data/products";
 
-// Placeholder featured products — real data arrives in Stage 2's product file
-const featuredProducts = [
-  { id: "1", name: "Vintage Denim Jacket", price: "KES 2,500", category: "Jackets" },
-  { id: "2", name: "Classic Crewneck Tee", price: "KES 800", category: "T-Shirts" },
-  { id: "3", name: "Street Cargo Trousers", price: "KES 1,800", category: "Trousers" },
-  { id: "4", name: "Retro Bomber Jacket", price: "KES 3,200", category: "Jackets" },
-];
+const featuredProducts = products.slice(0, 4);
 
 const pillars = [
   "Premium Thrift",
@@ -53,18 +49,9 @@ export function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
-            <div key={product.id} className="group cursor-pointer">
-              <div className="aspect-square bg-brand-black/5 rounded-lg mb-3 flex items-center justify-center text-brand-black/30 text-sm">
-                Image Placeholder
-              </div>
-              <p className="text-xs uppercase tracking-wide text-brand-black/50 mb-1">{product.category}</p>
-              <h3 className="font-semibold text-sm mb-1 group-hover:text-brand-gold transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-sm font-bold">{product.price}</p>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
