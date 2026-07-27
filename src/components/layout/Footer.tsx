@@ -9,9 +9,7 @@ export function Footer() {
     <footer className="bg-brand-black text-brand-white mt-30">
       <div className="container-abfk py-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         <div>
-          <h3 className="font-display text-lg mb-4">
-            A BOY FROM <span className="text-brand-gold">KIBERA</span>
-          </h3>
+          <img src="/images/logo-full.png" alt="A Boy From Kibera — Thrift & Style" className="h-24 w-auto mb-4" />
           <p className="text-sm text-brand-white/70">{brandCopy.tagline}</p>
         </div>
 

@@ -18,8 +18,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-brand-white border-b border-brand-black/10">
       <div className="container-abfk flex items-center justify-between h-18 py-4">
-        <Link to="/" className="font-display text-xl sm:text-2xl tracking-tight">
-          A BOY FROM <span className="text-brand-gold">KIBERA</span>
+        <Link to="/" aria-label="A Boy From Kibera home">
+          <img src="/images/logo-icon.png" alt="A Boy From Kibera logo" className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -6,12 +6,7 @@ import { products } from "@/data/products";
 
 const featuredProducts = products.slice(0, 4);
 
-const pillars = [
-  "Premium Thrift",
-  "Affordable Luxury",
-  "Unique Style",
-  "Sustainable Fashion",
-];
+
 
 export function Home() {
   return (
@@ -19,26 +14,13 @@ export function Home() {
       {/* Hero section — coded placeholder until the real brand photo is supplied.
           TODO: once abfk-hero-banner.jpg is ready, replace this whole <section>
           with: <img src={heroImage} alt="..." className="w-full h-auto object-cover" /> */}
-      <section className="bg-brand-black text-brand-white py-24 sm:py-32">
-        <div className="container-abfk text-center">
-          <h1 className="text-4xl sm:text-6xl mb-4">
-            A BOY FROM <span className="text-brand-gold">KIBERA</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-brand-white/80 mb-10">
-            Wear Confidence. Own Your Story.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar}
-                className="border border-brand-gold/40 rounded-lg py-4 px-2 text-xs sm:text-sm uppercase tracking-wide text-brand-gold font-semibold"
-              >
-                {pillar}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section>
+  <img
+    src="/images/hero-banner.jpg"
+    alt="A Boy From Kibera — Thrift & Style. Wear Confidence. Own Your Story."
+    className="w-full h-auto object-cover"
+  />
+</section>
 
       {/* Featured products */}
       <section className="container-abfk py-18">
